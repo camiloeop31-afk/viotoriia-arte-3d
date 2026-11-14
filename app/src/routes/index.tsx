@@ -122,7 +122,6 @@ function Index() {
         </div>
         <div className="hero-art" aria-label="Catálogo de diseños navideños VIOTORIIA">
           <div className="hero-image-main"><img src="/assets/catalog/page-1.jpg" alt="Portada de la colección navideña VIOTORIIA" /></div>
-          <div className="floating-stamp"><span>DISEÑADO</span><strong>con<br />intención</strong><span>IMPRESO EN 3D ✳</span></div>
           <div className="hero-caption">NAVIDAD · 2026 <span>01 / 07</span></div>
         </div>
         <div className="hero-side-label">OBJETOS CON PERSONALIDAD · HECHOS PARA COMPARTIR</div>
