@@ -10,34 +10,34 @@ type Product = { name: string; detail?: string; price: string; category: string;
 
 const products: Product[] = [
   // Colección especial — fotografías individuales extraídas del catálogo original.
-  { name: "Búho mágico", detail: "Adorno temático para los fans del mundo mágico.", price: "$7.500 unidad", category: "Colección mágica", image: "/assets/products/buho-magico.webp" },
-  { name: "Mago de cabello largo", detail: "Figura decorativa inspirada en la magia.", price: "$7.500 unidad", category: "Colección mágica", image: "/assets/products/mago-cabello-largo.webp" },
-  { name: "Mago de bigote", detail: "Adorno de personaje en relieve.", price: "$7.500 unidad", category: "Colección mágica", image: "/assets/products/mago-bigote.webp" },
-  { name: "Joven mago", detail: "Figura con varita mágica.", price: "$7.500 unidad", category: "Colección mágica", image: "/assets/products/joven-mago.webp" },
-  { name: "Retrato mágico", detail: "Adorno circular de personaje.", price: "$7.500 unidad", category: "Colección mágica", image: "/assets/products/retrato-magico.webp" },
-  { name: "Escudo de Hogwarts", detail: "Adorno con escudo y emblemas.", price: "$7.500 unidad", category: "Colección mágica", image: "/assets/products/escudo-hogwarts.webp" },
-  { name: "Tren mágico", detail: "Adorno temático del tren.", price: "$7.500 unidad", category: "Colección mágica", image: "/assets/products/tren-magico.webp" },
-  { name: "Escoba voladora", detail: "Adorno colgante.", price: "$7.500 unidad", category: "Colección mágica", image: "/assets/products/escoba-voladora.webp" },
-  { name: "Snitch dorada", detail: "Adorno con alas.", price: "$7.500 unidad", category: "Colección mágica", image: "/assets/products/snitch-dorada.webp" },
+  { name: "Búho mágico", detail: "Adorno temático para los fans del mundo mágico.", price: "$7.500 unidad", category: "Colección mágica", image: "https://d2ol7oe51mr4n9.cloudfront.net/user_3LXKNlzLOs2jmGsBXwh0UhR766e/6dd2d6ce-d9a4-4d1d-87a0-ac9ab334a42b.jpg" },
+  { name: "Mago de cabello largo", detail: "Figura decorativa inspirada en la magia.", price: "$7.500 unidad", category: "Colección mágica", image: "https://d2ol7oe51mr4n9.cloudfront.net/user_3LXKNlzLOs2jmGsBXwh0UhR766e/93d59658-b9dc-4756-aa49-97fa0c63a3dc.jpg" },
+  { name: "Mago de bigote", detail: "Adorno de personaje en relieve.", price: "$7.500 unidad", category: "Colección mágica", image: "https://d2ol7oe51mr4n9.cloudfront.net/user_3LXKNlzLOs2jmGsBXwh0UhR766e/e3a852c5-3a44-447a-9070-d4a449a7db1a.jpg" },
+  { name: "Joven mago", detail: "Figura con varita mágica.", price: "$7.500 unidad", category: "Colección mágica", image: "https://d2ol7oe51mr4n9.cloudfront.net/user_3LXKNlzLOs2jmGsBXwh0UhR766e/142e1bf9-d99f-4497-8c69-86bb635eca47.jpg" },
+  { name: "Retrato mágico", detail: "Adorno circular de personaje.", price: "$7.500 unidad", category: "Colección mágica", image: "https://d2ol7oe51mr4n9.cloudfront.net/user_3LXKNlzLOs2jmGsBXwh0UhR766e/41d02afa-6688-472c-bdfe-5c1f22120e87.jpg" },
+  { name: "Escudo de Hogwarts", detail: "Adorno con escudo y emblemas.", price: "$7.500 unidad", category: "Colección mágica", image: "https://d2ol7oe51mr4n9.cloudfront.net/user_3LXKNlzLOs2jmGsBXwh0UhR766e/10374d16-ea52-4642-8e3e-91cd8f0d4195.jpg" },
+  { name: "Tren mágico", detail: "Adorno temático del tren.", price: "$7.500 unidad", category: "Colección mágica", image: "https://d2ol7oe51mr4n9.cloudfront.net/user_3LXKNlzLOs2jmGsBXwh0UhR766e/f109c863-d48d-4ba7-a5f3-74938f8bec07.jpg" },
+  { name: "Escoba voladora", detail: "Adorno colgante.", price: "$7.500 unidad", category: "Colección mágica", image: "https://d2ol7oe51mr4n9.cloudfront.net/user_3LXKNlzLOs2jmGsBXwh0UhR766e/93e8f513-b5a0-414b-a4ef-bce993a8d55b.jpg" },
+  { name: "Snitch dorada", detail: "Adorno con alas.", price: "$7.500 unidad", category: "Colección mágica", image: "https://d2ol7oe51mr4n9.cloudfront.net/user_3LXKNlzLOs2jmGsBXwh0UhR766e/eb51a803-2bb5-40c3-979e-e93bfb0d4dfc.jpg" },
   // Adornos para el árbol.
-  { name: "Adornos clásicos", detail: "6 cm. Disponibles en blanco, rojo, verde oscuro y rosado. Media docena: $30.000.", price: "$6.000 unidad", category: "Adornos para árbol", image: "/assets/products/adornos-clasicos.webp", featured: true },
-  { name: "Moño decorativo", detail: "Adorno para árbol de 15 cm. Media docena: $42.000.", price: "$8.000 unidad", category: "Adornos para árbol", image: "/assets/products/mono-decorativo.webp" },
-  { name: "Estrella colgante", detail: "Diseño con textura en relieve. Media docena: $25.000.", price: "$5.000 unidad", category: "Adornos para árbol", image: "/assets/products/estrella-colgante.webp" },
-  { name: "Bolas de Navidad", detail: "Media docena en rojo, verde y rosado.", price: "$35.000 media docena", category: "Adornos para árbol", image: "/assets/products/bolas-navidad.webp" },
-  { name: "Adornos variados para el árbol", detail: "Diseños surtidos de 6 cm. Elige tus favoritos. Disponibles en blanco, rojo, verde oscuro y rosado. Media docena: $30.000.", price: "$6.000 unidad", category: "Adornos para árbol", image: "/assets/products/adornos-variados.webp", featured: true },
-  { name: "Adorno personalizado", detail: "Diseño circular con nombre en relieve. Media docena: $35.000.", price: "$35.000 media docena", category: "Personalizados", image: "/assets/products/adorno-personalizado.webp", featured: true },
-  { name: "Adorno con copos de nieve", detail: "Diseño personalizado con nombre y copos. Media docena: $45.000.", price: "$45.000 media docena", category: "Personalizados", image: "/assets/products/adorno-copos-nieve.webp" },
+  { name: "Adornos clásicos", detail: "6 cm. Disponibles en blanco, rojo, verde oscuro y rosado. Media docena: $30.000.", price: "$6.000 unidad", category: "Adornos navideños", image: "https://d2ol7oe51mr4n9.cloudfront.net/user_3LXKNlzLOs2jmGsBXwh0UhR766e/9a802626-6b66-4587-95a7-1f7f61467edc.jpg", featured: true },
+  { name: "Moño decorativo", detail: "Adorno para árbol de 15 cm. Media docena: $42.000.", price: "$8.000 unidad", category: "Adornos navideños", image: "https://d2ol7oe51mr4n9.cloudfront.net/user_3LXKNlzLOs2jmGsBXwh0UhR766e/870bb555-6e8f-41f0-891b-d89edebf4b13.jpg" },
+  { name: "Estrella colgante", detail: "Diseño con textura en relieve. Media docena: $25.000.", price: "$5.000 unidad", category: "Adornos navideños", image: "https://d2ol7oe51mr4n9.cloudfront.net/user_3LXKNlzLOs2jmGsBXwh0UhR766e/fefcd2e1-7f33-47d3-9dab-218a7f8cefc6.jpg" },
+  { name: "Bolas de Navidad", detail: "Media docena en rojo, verde y rosado.", price: "$35.000 media docena", category: "Adornos navideños", image: "https://d2ol7oe51mr4n9.cloudfront.net/user_3LXKNlzLOs2jmGsBXwh0UhR766e/6334f646-fe01-4497-b917-ca3f6f1d0643.jpg" },
+  { name: "Adornos variados para el árbol", detail: "Diseños surtidos de 6 cm. Elige tus favoritos. Disponibles en blanco, rojo, verde oscuro y rosado. Media docena: $30.000.", price: "$6.000 unidad", category: "Adornos navideños", image: "/assets/products/adornos-variados.webp", featured: true },
+  { name: "Adorno personalizado", detail: "Diseño circular con nombre en relieve. Media docena: $35.000.", price: "$35.000 media docena", category: "Personalizados", image: "https://d2ol7oe51mr4n9.cloudfront.net/user_3LXKNlzLOs2jmGsBXwh0UhR766e/aaf76267-b43a-44c3-8436-8f1b9818c993.jpg", featured: true },
+  { name: "Adorno con copos de nieve", detail: "Diseño personalizado con nombre y copos. Media docena: $45.000.", price: "$45.000 media docena", category: "Personalizados", image: "https://d2ol7oe51mr4n9.cloudfront.net/user_3LXKNlzLOs2jmGsBXwh0UhR766e/5041458e-c039-471d-80d6-128e19bc0b9c.jpg" },
   // Figuras y decoración.
-  { name: "Reno decorativo", detail: "Figura de 20 cm, doble color. Consulta combinaciones.", price: "$45.000", category: "Figuras y decoración", image: "/assets/products/reno-decorativo.webp", featured: true },
-  { name: "Reno doble color", detail: "Diseño navideño de 20 cm. Pregunta por colores.", price: "$45.000", category: "Figuras y decoración", image: "/assets/products/reno-doble-color.webp" },
-  { name: "Pareja de renos", detail: "Figuras decorativas de 15 cm.", price: "$50.000 la pareja", category: "Figuras y decoración", image: "/assets/products/pareja-renos.webp" },
-  { name: "Reno sentado", detail: "Figura decorativa de 25 cm.", price: "$45.000", category: "Figuras y decoración", image: "/assets/products/reno-sentado.webp" },
-  { name: "Portavasos copo de nieve", detail: "Set de portavasos con soporte.", price: "$55.000", category: "Figuras y decoración", image: "/assets/products/portavasos-copo-nieve.webp" },
-  { name: "Pesebre minimalista", detail: "Diseño decorativo de la Sagrada Familia.", price: "$30.000", category: "Figuras y decoración", image: "/assets/products/pesebre-minimalista.webp" },
-  { name: "Pesebre de 8 piezas", detail: "8 figuras de 8 cm de alto, pintadas a mano.", price: "$150.000 el juego completo", category: "Figuras y decoración", image: "/assets/products/pesebre-ocho-piezas.webp", featured: true },
+  { name: "Reno decorativo", detail: "Figura de 20 cm, doble color. Consulta combinaciones.", price: "$45.000", category: "Figuras navideñas", image: "https://d2ol7oe51mr4n9.cloudfront.net/user_3LXKNlzLOs2jmGsBXwh0UhR766e/4458d0ab-599c-4ea2-9eb2-12099e88e79e.jpg", featured: true },
+  { name: "Reno doble color", detail: "Diseño navideño de 20 cm. Pregunta por colores.", price: "$45.000", category: "Figuras navideñas", image: "https://d2ol7oe51mr4n9.cloudfront.net/user_3LXKNlzLOs2jmGsBXwh0UhR766e/0e5c815e-83a8-49b0-9636-42edba12722c.jpg" },
+  { name: "Pareja de renos", detail: "Figuras decorativas de 15 cm.", price: "$50.000 la pareja", category: "Figuras navideñas", image: "https://d2ol7oe51mr4n9.cloudfront.net/user_3LXKNlzLOs2jmGsBXwh0UhR766e/804c30f9-5c3a-45e0-96b9-98265601b12b.jpg" },
+  { name: "Reno sentado", detail: "Figura decorativa de 25 cm.", price: "$45.000", category: "Figuras navideñas", image: "https://d2ol7oe51mr4n9.cloudfront.net/user_3LXKNlzLOs2jmGsBXwh0UhR766e/e1dee147-3c00-42dc-bcc1-5bf2bbf6f540.jpg" },
+  { name: "Portavasos copo de nieve", detail: "Set de portavasos con soporte.", price: "$55.000", category: "Figuras navideñas", image: "https://d2ol7oe51mr4n9.cloudfront.net/user_3LXKNlzLOs2jmGsBXwh0UhR766e/862e07e4-e113-4b33-b9ef-905cc53e35da.jpg" },
+  { name: "Pesebre minimalista", detail: "Diseño decorativo de la Sagrada Familia.", price: "$30.000", category: "Pesebres", image: "https://d2ol7oe51mr4n9.cloudfront.net/user_3LXKNlzLOs2jmGsBXwh0UhR766e/7c64e665-d53c-42ed-b098-8686fb1a211c.jpg" },
+  { name: "Pesebre de 8 piezas", detail: "8 figuras de 8 cm de alto, pintadas a mano.", price: "$150.000 el juego completo", category: "Pesebres", image: "https://d2ol7oe51mr4n9.cloudfront.net/user_3LXKNlzLOs2jmGsBXwh0UhR766e/ebe7732f-43ae-4741-b56f-c730ef48d112.jpg", featured: true },
 ];
 
-const categories = ["Todos", "Adornos para árbol", "Personalizados", "Figuras y decoración", "Colección mágica"];
+const categories = ["Todos", "Adornos navideños", "Personalizados", "Figuras navideñas", "Pesebres", "Colección mágica"];
 const whatsappBase = "https://wa.me/573015826473";
 
 function Index() {
@@ -121,7 +121,7 @@ function Index() {
         <div className="product-grid">
           {filtered.map((item) => (
             <article className="product-card" key={item.name}>
-              <div className="product-image"><img src={item.image} alt={item.name} loading="lazy" /><span className="product-category">{item.category}</span>{item.featured && <span className="product-star">✳</span>}</div>
+              <div className={`product-image ${item.name === "Pesebre de 8 piezas" ? "product-image-tall" : ""} ${item.name === "Adornos variados para el árbol" ? "product-image-collection" : ""}`}><img src={item.image} alt={item.name} loading="lazy" decoding="async" /><span className="product-category">{item.category}</span>{item.featured && <span className="product-star">✳</span>}</div>
               <div className="product-info"><div><h3>{item.name}</h3>{item.detail && <p>{item.detail}</p>}</div><strong>{item.price}</strong></div>
               <a href={`${whatsappBase}?text=${encodeURIComponent(`Hola, quiero información y disponibilidad de ${item.name} de VIOTORIIA.`)}`} target="_blank" rel="noreferrer" className="product-link">Consultar este diseño <span>↗</span></a>
             </article>
