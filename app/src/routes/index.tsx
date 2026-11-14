@@ -14,13 +14,13 @@ function formatCOP(value: number) { return new Intl.NumberFormat("es-CO", { styl
 
 const products: Product[] = [
   // Colección especial — fotografías individuales extraídas del catálogo original.
-  { name: "Búho mágico", detail: "Adorno temático para los fans del mundo mágico.", price: "$7.500 unidad", category: "Colección mágica", image: "https://d2ol7oe51mr4n9.cloudfront.net/user_3LXKNlzLOs2jmGsBXwh0UhR766e/a1310cc8-86b0-4d14-94d2-436ca9284cea.jpg" },
-  { name: "Mago de cabello largo", detail: "Figura decorativa inspirada en la magia.", price: "$7.500 unidad", category: "Colección mágica", image: "https://d2ol7oe51mr4n9.cloudfront.net/user_3LXKNlzLOs2jmGsBXwh0UhR766e/33c800f1-b07e-432b-b724-94b4820a21f6.jpg" },
-  { name: "Mago de bigote", detail: "Adorno de personaje en relieve.", price: "$7.500 unidad", category: "Colección mágica", image: "https://d2ol7oe51mr4n9.cloudfront.net/user_3LXKNlzLOs2jmGsBXwh0UhR766e/fa2831fb-239d-4c5f-99a2-882d996f5fc5.jpg" },
-  { name: "Joven mago", detail: "Figura con varita mágica.", price: "$7.500 unidad", category: "Colección mágica", image: "https://d2ol7oe51mr4n9.cloudfront.net/user_3LXKNlzLOs2jmGsBXwh0UhR766e/d16d0c23-feaa-4335-a825-194ff8f61595.jpg" },
-  { name: "Retrato mágico", detail: "Adorno circular de personaje.", price: "$7.500 unidad", category: "Colección mágica", image: "https://d2ol7oe51mr4n9.cloudfront.net/user_3LXKNlzLOs2jmGsBXwh0UhR766e/d01845f2-3ac8-45f5-bee7-938f9705ec07.jpg" },
+  { name: "Hedwig", detail: "Adorno temático para los fans del mundo mágico.", price: "$7.500 unidad", category: "Colección mágica", image: "https://d2ol7oe51mr4n9.cloudfront.net/user_3LXKNlzLOs2jmGsBXwh0UhR766e/cbd6b470-552d-4e70-8f70-a98054045045.jpg" },
+  { name: "Severus Snape", detail: "Figura decorativa inspirada en la magia.", price: "$7.500 unidad", category: "Colección mágica", image: "https://d2ol7oe51mr4n9.cloudfront.net/user_3LXKNlzLOs2jmGsBXwh0UhR766e/e50766b7-26cc-4bb6-a0ce-653f6b652af8.jpg" },
+  { name: "Sirius Black", detail: "Adorno de personaje en relieve.", price: "$7.500 unidad", category: "Colección mágica", image: "https://d2ol7oe51mr4n9.cloudfront.net/user_3LXKNlzLOs2jmGsBXwh0UhR766e/24f83a2d-9f94-419e-a2d3-ceea760a10da.jpg" },
+  { name: "Ron Weasley", detail: "Figura con varita mágica.", price: "$7.500 unidad", category: "Colección mágica", image: "https://d2ol7oe51mr4n9.cloudfront.net/user_3LXKNlzLOs2jmGsBXwh0UhR766e/83520478-9648-4044-a496-3052a303ef7d.jpg" },
+  { name: "Draco Malfoy", detail: "Adorno circular de personaje.", price: "$7.500 unidad", category: "Colección mágica", image: "https://d2ol7oe51mr4n9.cloudfront.net/user_3LXKNlzLOs2jmGsBXwh0UhR766e/8b3022f9-936f-4fc7-8f0f-fecefe1ab47f.jpg" },
   { name: "Escudo de Hogwarts", detail: "Adorno con escudo y emblemas.", price: "$7.500 unidad", category: "Colección mágica", image: "https://d2ol7oe51mr4n9.cloudfront.net/user_3LXKNlzLOs2jmGsBXwh0UhR766e/266cd3d2-0b14-4bb0-9ad0-33b155a81267.jpg" },
-  { name: "Tren mágico", detail: "Adorno temático del tren.", price: "$7.500 unidad", category: "Colección mágica", image: "https://d2ol7oe51mr4n9.cloudfront.net/user_3LXKNlzLOs2jmGsBXwh0UhR766e/655b05cc-4fdb-4444-9da6-67b750757420.jpg" },
+  { name: "Expreso de Hogwarts", detail: "Adorno temático del tren.", price: "$7.500 unidad", category: "Colección mágica", image: "https://d2ol7oe51mr4n9.cloudfront.net/user_3LXKNlzLOs2jmGsBXwh0UhR766e/4fd348c0-42d4-4e51-af23-d7619fcec3fc.jpg" },
   { name: "Escoba voladora", detail: "Adorno colgante.", price: "$7.500 unidad", category: "Colección mágica", image: "https://d2ol7oe51mr4n9.cloudfront.net/user_3LXKNlzLOs2jmGsBXwh0UhR766e/7ea7bf92-abe2-4dbf-8711-f29482ac064b.jpg" },
   { name: "Snitch dorada", detail: "Adorno con alas.", price: "$7.500 unidad", category: "Colección mágica", image: "https://d2ol7oe51mr4n9.cloudfront.net/user_3LXKNlzLOs2jmGsBXwh0UhR766e/b846ee3b-61a0-4fd1-8fff-f63142cae1e8.jpg" },
   // Adornos para el árbol.
