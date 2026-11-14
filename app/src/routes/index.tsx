@@ -131,7 +131,6 @@ function Index() {
         <p className="eyebrow">EL ARTE DE CREAR</p>
         <h2>Diseños que hacen<br /><em>especial lo cotidiano.</em></h2>
         <p>En VIOTORIIA transformamos ideas en objetos decorativos con carácter. Cada pieza se imprime bajo pedido y está pensada para acompañar tus celebraciones, tus espacios y tus momentos favoritos.</p>
-        <div className="intro-orbit" aria-hidden="true">✳</div>
       </section>
 
       <section className="showreel-section" id="video" aria-labelledby="showreel-title">
