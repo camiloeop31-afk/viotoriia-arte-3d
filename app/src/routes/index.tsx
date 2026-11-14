@@ -109,6 +109,9 @@ function Index() {
         <div className="header-actions"><a className="header-cta" href="#coleccion">Explorar colección <span>↗</span></a><button className="cart-trigger" type="button" onClick={() => setCartOpen(true)} aria-label={`Abrir carrito, ${cartCount} productos`}><span aria-hidden="true">♧</span> Carrito <b>{cartCount}</b></button></div>
       </header>
 
+      <div role="note" aria-label="Promoción de envío gratis" style={{ background: "#244b3b", color: "#fff", padding: "13px 20px", textAlign: "center", fontSize: "clamp(13px, 1.5vw, 16px)", lineHeight: 1.45, letterSpacing: "0.02em" }}>
+        <strong style={{ fontSize: "1.05em" }}>✦ ENVÍO GRATIS ✦</strong> Por compras superiores a <strong>$100.000</strong>, envío gratis a <strong>Bogotá y alrededores</strong>.
+      </div>
       <section className="hero" id="inicio">
         <div className="hero-copy">
           <p className="eyebrow"><span /> COLECCIÓN NAVIDAD 2026</p>
