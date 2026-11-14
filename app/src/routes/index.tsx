@@ -100,7 +100,7 @@ function Index() {
     <main className="storefront">
       <header className="site-header">
         <a className="brand-lockup" href="#inicio" aria-label="VIOTORIIA inicio">
-          <span className="brand-mark">V<span>✳</span></span>
+          <span className="brand-mark">V</span>
           <span><strong>VIOTORIIA</strong><small>ARTE EN 3D</small></span>
         </a>
         <nav className="main-nav" aria-label="Navegación principal">
@@ -118,7 +118,7 @@ function Index() {
           <h1>Pequeños detalles,<br /><em>grandes momentos.</em></h1>
           <p className="hero-intro">Piezas creadas en 3D para llenar tus espacios de magia, calidez y personalidad. Diseños especiales para regalar y celebrar.</p>
           <div className="hero-actions"><a className="button-primary" href="#coleccion">Descubrir diseños <span>↗</span></a><a className="text-link" href="#pedido">Crear mi pedido <span>→</span></a></div>
-          <div className="hero-note"><span className="sparkle">✳</span><span>Hecho bajo pedido<br /><small>Detalles que se sienten únicos</small></span></div>
+          <div className="hero-note"><span>Hecho bajo pedido<br /><small>Detalles que se sienten únicos</small></span></div>
         </div>
         <div className="hero-art" aria-label="Catálogo de diseños navideños VIOTORIIA">
           <div className="hero-image-main"><img src="/assets/catalog/page-1.jpg" alt="Portada de la colección navideña VIOTORIIA" /></div>
@@ -157,7 +157,7 @@ function Index() {
         <div className="product-grid">
           {filtered.map((item) => (
             <article className="product-card" key={item.name}>
-              <button className={`product-image product-image-button ${item.name === "Pesebre de 8 piezas" ? "product-image-tall" : ""} ${item.name === "Adornos variados para el árbol" ? "product-image-collection" : ""}`} type="button" onClick={() => { setSelectedProduct(item); setSelectedQuantity(1); }} aria-label={`Ver ${item.name} ampliado`}><img src={item.image} alt={item.name} loading="lazy" decoding="async" /><span className="product-category">{item.category}</span>{item.featured && <span className="product-star">✳</span>}<span className="image-zoom-hint">Ver detalle ↗</span></button>
+              <button className={`product-image product-image-button ${item.name === "Pesebre de 8 piezas" ? "product-image-tall" : ""} ${item.name === "Adornos variados para el árbol" ? "product-image-collection" : ""}`} type="button" onClick={() => { setSelectedProduct(item); setSelectedQuantity(1); }} aria-label={`Ver ${item.name} ampliado`}><img src={item.image} alt={item.name} loading="lazy" decoding="async" /><span className="product-category">{item.category}</span><span className="image-zoom-hint">Ver detalle ↗</span></button>
               <div className="product-info"><div><h3>{item.name}</h3>{item.detail && <p>{item.detail}</p>}</div><strong>{item.price}</strong></div>
               <button type="button" className="product-link" onClick={() => { setSelectedProduct(item); setSelectedQuantity(1); }}>Ver detalles y agregar al carrito <span>＋</span></button>
             </article>
@@ -219,10 +219,10 @@ function Index() {
         </form>
       </section>
 
-      <section className="conditions"><div><span>30%</span><p><strong>Anticipo para iniciar</strong><small>Comenzamos a elaborar tu pedido.</small></p></div><div><span>70%</span><p><strong>Al finalizar</strong><small>El saldo se paga al completar tu pedido.</small></p></div><div><span>✳</span><p><strong>Hecho bajo pedido</strong><small>Precios especiales para compras al por mayor. Consulta con nosotros.</small></p></div></section>
+      <section className="conditions"><div><span>30%</span><p><strong>Anticipo para iniciar</strong><small>Comenzamos a elaborar tu pedido.</small></p></div><div><span>70%</span><p><strong>Al finalizar</strong><small>El saldo se paga al completar tu pedido.</small></p></div><div><span>✓</span><p><strong>Hecho bajo pedido</strong><small>Precios especiales para compras al por mayor. Consulta con nosotros.</small></p></div></section>
 
       <footer className="site-footer"><a className="brand-lockup footer-brand" href="#inicio"><span className="brand-mark">V<span>✳</span></span><span><strong>VIOTORIIA</strong><small>ARTE EN 3D</small></span></a><p>Diseños especiales. Decoración y regalos.</p><div className="footer-contact"><a href="mailto:Viotoriia@gmail.com">Viotoriia@gmail.com</a><a href="https://wa.me/573015826473" target="_blank" rel="noreferrer">+57 301 582 6473</a></div><small>© 2026 VIOTORIIA · Hecho con creatividad en Colombia</small></footer>
-      <a className="viotoriia-whatsapp" href="https://wa.me/573015826473?text=Hola%2C%20quiero%20hacer%20un%20pedido%20en%20VIOTORIIA" target="_blank" rel="noreferrer" aria-label="Escribir a VIOTORIIA por WhatsApp"><span aria-hidden="true">✳</span> Pedir por WhatsApp</a>
+      <a className="viotoriia-whatsapp" href="https://wa.me/573015826473?text=Hola%2C%20quiero%20hacer%20un%20pedido%20en%20VIOTORIIA" target="_blank" rel="noreferrer" aria-label="Escribir a VIOTORIIA por WhatsApp">Pedir por WhatsApp</a>
     </main>
   );
 }
