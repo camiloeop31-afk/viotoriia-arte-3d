@@ -217,7 +217,6 @@ body { background: var(--v-paper); color: var(--v-ink); font-family: "Montserrat
 .brand-lockup strong { font:700 15px/1.1 Georgia,serif; letter-spacing:.17em; }
 .brand-lockup small { font-size:8px; letter-spacing:.3em; color:var(--v-muted); }
 .brand-mark { width:39px; height:39px; border:1px solid var(--v-gold); border-radius:50%; display:grid; place-items:center; font:italic 24px Georgia,serif; position:relative; }
-.brand-mark span { position:absolute; right:-5px; top:-5px; font:12px sans-serif; color:var(--v-gold); }
 .main-nav { display:flex; gap:clamp(18px,3vw,44px); }
 .main-nav a,.text-link { color:var(--v-ink); text-decoration:none; font-size:11px; letter-spacing:.07em; }
 .main-nav a:hover,.text-link:hover { color:var(--v-gold); }
@@ -252,7 +251,6 @@ body { background: var(--v-paper); color: var(--v-ink); font-family: "Montserrat
 .intro-band h2 { font-size:clamp(38px,5vw,62px); }
 .intro-band h2 em { color:#d1ae7d; }
 .intro-band > p:last-of-type { max-width:530px; margin:28px auto 0; color:#d4d9d0; font:14px/1.9 Georgia,serif; }
-.intro-orbit { position:absolute; right:8%; bottom:-90px; font-size:190px; color:#ffffff08; animation:slow-spin 38s linear infinite; pointer-events:none; }
 .catalog-section { padding:112px clamp(22px,8vw,120px) 100px; }
 .section-heading { display:flex; align-items:end; justify-content:space-between; gap:30px; margin-bottom:45px; }
 .section-heading h2 { font-size:clamp(38px,4.5vw,60px); }
@@ -299,7 +297,6 @@ body { background: var(--v-paper); color: var(--v-ink); font-family: "Montserrat
 .order-steps small { color:var(--v-muted); font-size:10px; }
 .order-form { padding:34px; background:#ebe5d9; border:1px solid var(--v-line); display:grid; gap:19px; }
 .form-heading { display:flex; gap:13px; align-items:center; padding-bottom:18px; border-bottom:1px solid var(--v-line); }
-.form-heading > span { color:var(--v-gold); font-size:27px; }
 .form-heading h3 { margin:0 0 5px; font:25px Georgia,serif; }
 .form-heading p { margin:0; color:var(--v-muted); font-size:10px; }
 .order-form label { display:grid; gap:8px; color:var(--v-ink); font-size:10px; letter-spacing:.04em; }
