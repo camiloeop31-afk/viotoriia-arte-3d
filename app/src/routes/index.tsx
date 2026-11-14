@@ -7,6 +7,10 @@ export const Route = createFileRoute("/")({
 });
 
 type Product = { name: string; detail?: string; price: string; category: string; image: string; featured?: boolean };
+type CartItem = { product: Product; quantity: number };
+
+function priceValue(price: string) { const amount = price.match(/\$([\d.]+)/)?.[1]; return amount ? Number(amount.replace(/\./g, "")) : 0; }
+function formatCOP(value: number) { return new Intl.NumberFormat("es-CO", { style: "currency", currency: "COP", maximumFractionDigits: 0 }).format(value); }
 
 const products: Product[] = [
   // Colección especial — fotografías individuales extraídas del catálogo original.
@@ -42,12 +46,40 @@ const whatsappBase = "https://wa.me/573015826473";
 
 function Index() {
   const [activeCategory, setActiveCategory] = useState("Todos");
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
+  const [selectedQuantity, setSelectedQuantity] = useState(1);
+  const [cart, setCart] = useState<CartItem[]>([]);
+  const [cartOpen, setCartOpen] = useState(false);
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [product, setProduct] = useState("");
   const [quantity, setQuantity] = useState("1");
   const [notes, setNotes] = useState("");
   const filtered = useMemo(() => activeCategory === "Todos" ? products : products.filter((item) => item.category === activeCategory), [activeCategory]);
+  const cartCount = cart.reduce((sum, item) => sum + item.quantity, 0);
+  const cartTotal = cart.reduce((sum, item) => sum + priceValue(item.product.price) * item.quantity, 0);
+
+  function addToCart(item: Product, amount: number) {
+    setCart((current) => {
+      const existing = current.find((entry) => entry.product.name === item.name);
+      return existing ? current.map((entry) => entry.product.name === item.name ? { ...entry, quantity: entry.quantity + amount } : entry) : [...current, { product: item, quantity: amount }];
+    });
+    setSelectedProduct(null);
+    setSelectedQuantity(1);
+    setCartOpen(true);
+  }
+
+  function updateCartQuantity(itemName: string, amount: number) {
+    setCart((current) => current.map((entry) => entry.product.name === itemName ? { ...entry, quantity: Math.max(1, amount) } : entry));
+  }
+
+  function removeFromCart(itemName: string) { setCart((current) => current.filter((entry) => entry.product.name !== itemName)); }
+
+  function sendCartOrder() {
+    const lines = cart.map((entry) => `${entry.quantity} x ${entry.product.name} — ${entry.product.price}`);
+    const message = ["Hola, VIOTORIIA. Quiero realizar este pedido:", ...lines, `Total estimado: ${formatCOP(cartTotal)}`, "Por favor confirmen disponibilidad, colores y tiempo de elaboración."].join("\\n");
+    window.open(`${whatsappBase}?text=${encodeURIComponent(message)}`, "_blank", "noopener,noreferrer");
+  }
 
   function sendOrder(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -72,7 +104,7 @@ function Index() {
         <nav className="main-nav" aria-label="Navegación principal">
           <a href="#coleccion">Colección</a><a href="#video">Video</a><a href="#nosotros">Nuestra esencia</a><a href="#pedido">Pedidos</a>
         </nav>
-        <a className="header-cta" href="#coleccion">Explorar colección <span>↗</span></a>
+        <div className="header-actions"><a className="header-cta" href="#coleccion">Explorar colección <span>↗</span></a><button className="cart-trigger" type="button" onClick={() => setCartOpen(true)} aria-label={`Abrir carrito, ${cartCount} productos`}><span aria-hidden="true">♧</span> Carrito <b>{cartCount}</b></button></div>
       </header>
 
       <section className="hero" id="inicio">
@@ -121,12 +153,45 @@ function Index() {
         <div className="product-grid">
           {filtered.map((item) => (
             <article className="product-card" key={item.name}>
-              <div className={`product-image ${item.name === "Pesebre de 8 piezas" ? "product-image-tall" : ""} ${item.name === "Adornos variados para el árbol" ? "product-image-collection" : ""}`}><img src={item.image} alt={item.name} loading="lazy" decoding="async" /><span className="product-category">{item.category}</span>{item.featured && <span className="product-star">✳</span>}</div>
+              <button className={`product-image product-image-button ${item.name === "Pesebre de 8 piezas" ? "product-image-tall" : ""} ${item.name === "Adornos variados para el árbol" ? "product-image-collection" : ""}`} type="button" onClick={() => { setSelectedProduct(item); setSelectedQuantity(1); }} aria-label={`Ver ${item.name} ampliado`}><img src={item.image} alt={item.name} loading="lazy" decoding="async" /><span className="product-category">{item.category}</span>{item.featured && <span className="product-star">✳</span>}<span className="image-zoom-hint">Ver detalle ↗</span></button>
               <div className="product-info"><div><h3>{item.name}</h3>{item.detail && <p>{item.detail}</p>}</div><strong>{item.price}</strong></div>
-              <a href={`${whatsappBase}?text=${encodeURIComponent(`Hola, quiero información y disponibilidad de ${item.name} de VIOTORIIA.`)}`} target="_blank" rel="noreferrer" className="product-link">Consultar este diseño <span>↗</span></a>
+              <button type="button" className="product-link" onClick={() => { setSelectedProduct(item); setSelectedQuantity(1); }}>Ver detalles y agregar al carrito <span>＋</span></button>
             </article>
           ))}
         </div>
+
+      {selectedProduct && (
+        <div className="store-modal-backdrop" role="presentation" onClick={() => setSelectedProduct(null)}>
+          <section className="product-modal" role="dialog" aria-modal="true" aria-label={`Detalle de ${selectedProduct.name}`} onClick={(event) => event.stopPropagation()}>
+            <button className="modal-close" type="button" onClick={() => setSelectedProduct(null)} aria-label="Cerrar">×</button>
+            <div className="product-modal-image"><img src={selectedProduct.image} alt={selectedProduct.name} /></div>
+            <div className="product-modal-copy">
+              <p className="eyebrow">{selectedProduct.category}</p>
+              <h2>{selectedProduct.name}</h2>
+              <strong className="modal-price">{selectedProduct.price}</strong>
+              <p className="modal-description">{selectedProduct.detail || "Pieza decorativa impresa en 3D. Consulta disponibilidad y opciones de color."}</p>
+              <p className="modal-note">Precio expresado en pesos colombianos (COP). La disponibilidad y los colores se confirman al realizar el pedido.</p>
+              <div className="modal-quantity"><span>Cantidad</span><div><button type="button" onClick={() => setSelectedQuantity((n) => Math.max(1, n - 1))} aria-label="Restar cantidad">−</button><b>{selectedQuantity}</b><button type="button" onClick={() => setSelectedQuantity((n) => Math.min(99, n + 1))} aria-label="Sumar cantidad">＋</button></div></div>
+              <button className="button-primary modal-add" type="button" onClick={() => addToCart(selectedProduct, selectedQuantity)}>Agregar al carrito <span>＋</span></button>
+            </div>
+          </section>
+        </div>
+      )}
+
+      {cartOpen && (
+        <div className="store-modal-backdrop cart-backdrop" role="presentation" onClick={() => setCartOpen(false)}>
+          <section className="cart-modal" role="dialog" aria-modal="true" aria-label="Mi carrito" onClick={(event) => event.stopPropagation()}>
+            <div className="cart-heading"><div><p className="eyebrow">TU SELECCIÓN</p><h2>Mi carrito <span>({cartCount})</span></h2></div><button className="modal-close" type="button" onClick={() => setCartOpen(false)} aria-label="Cerrar">×</button></div>
+            {cart.length === 0 ? <div className="cart-empty"><span>✳</span><h3>Tu carrito está vacío</h3><p>Abre cualquier producto del catálogo para ver sus detalles y agregarlo aquí.</p><button className="button-primary" type="button" onClick={() => { setCartOpen(false); document.getElementById("coleccion")?.scrollIntoView({ behavior: "smooth" }); }}>Explorar catálogo</button></div> : <>
+              <div className="cart-items">{cart.map((entry) => <article className="cart-item" key={entry.product.name}><img src={entry.product.image} alt="" /><div className="cart-item-info"><h3>{entry.product.name}</h3><p>{entry.product.price}</p><div className="cart-item-actions"><button type="button" onClick={() => updateCartQuantity(entry.product.name, entry.quantity - 1)} aria-label={`Reducir ${entry.product.name}`}>−</button><b>{entry.quantity}</b><button type="button" onClick={() => updateCartQuantity(entry.product.name, entry.quantity + 1)} aria-label={`Aumentar ${entry.product.name}`}>＋</button><button className="remove-item" type="button" onClick={() => removeFromCart(entry.product.name)}>Quitar</button></div></div><strong>{formatCOP(priceValue(entry.product.price) * entry.quantity)}</strong></article>)}</div>
+              <div className="cart-total"><span>Total estimado</span><strong>{formatCOP(cartTotal)}</strong></div>
+              <p className="cart-disclaimer">El total es una estimación según el primer valor indicado en cada precio. Confirmaremos paquetes, disponibilidad y envío por WhatsApp.</p>
+              <button className="button-primary cart-checkout" type="button" onClick={sendCartOrder}>Continuar pedido por WhatsApp <span>↗</span></button>
+            </>}
+          </section>
+        </div>
+      )}
+
         <p className="catalog-footnote">Los colores y combinaciones están sujetos a disponibilidad. Los precios están expresados en pesos colombianos (COP).</p>
       </section>
 
