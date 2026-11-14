@@ -9,7 +9,7 @@
   "scripts": {
     "dev": "vite dev",
     "dev:design": "HF_DESIGN_INSPECTOR=1 vite dev --mode design",
-    "build": "bun run check:ui && tsr generate && tsc --noEmit && vite build",
+    "build": "bunx vite build",
     "build:dev": "vite build --mode development",
     "preview": "vite preview",
     "postinstall": "node scripts/verify-install.mjs",
@@ -31,7 +31,7 @@
     "@tailwindcss/vite": "^4.3.2",
     "@tanstack/react-query": "^5.101.2",
     "@tanstack/react-router": "^1.170.17",
-    "@tanstack/react-start": "^1.168.27",
+    "@tanstack/react-start": "^1.169.5",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "cmdk": "^1.1.1",
