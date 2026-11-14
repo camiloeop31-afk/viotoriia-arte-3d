@@ -38,7 +38,7 @@ const products: Product[] = [
   { name: "Reno sentado", detail: "Figura decorativa de 25 cm.", price: "$45.000", category: "Figuras navideñas", image: "https://d2ol7oe51mr4n9.cloudfront.net/user_3LXKNlzLOs2jmGsBXwh0UhR766e/1aed7b1f-7033-4a0a-a5af-eecdd2e3621f.jpg" },
   { name: "Portavasos copo de nieve", detail: "Set de portavasos con soporte.", price: "$55.000", category: "Figuras navideñas", image: "https://d2ol7oe51mr4n9.cloudfront.net/user_3LXKNlzLOs2jmGsBXwh0UhR766e/5429640c-8b85-43b4-a611-8ecf77465d69.jpg" },
   { name: "Pesebre minimalista", detail: "Diseño decorativo de la Sagrada Familia.", price: "$30.000", category: "Pesebres", image: "https://d2ol7oe51mr4n9.cloudfront.net/user_3LXKNlzLOs2jmGsBXwh0UhR766e/cc35803b-244b-4f4f-bbf5-ea6826e44c8b.jpg" },
-  { name: "Pesebre de 8 piezas", detail: "8 figuras de 8 cm de alto, pintadas a mano.", price: "$150.000 el juego completo", category: "Pesebres", image: "https://d2ol7oe51mr4n9.cloudfront.net/user_3LXKNlzLOs2jmGsBXwh0UhR766e/866ac85a-cbce-4f9b-a405-b868468c5604.jpg", featured: true },
+  { name: "Pesebre de 8 piezas", detail: "8 figuras de 8 cm de alto, pintadas a mano.", price: "$150.000 el juego completo", category: "Pesebres", image: "https://d2ol7oe51mr4n9.cloudfront.net/user_3LXKNlzLOs2jmGsBXwh0UhR766e/0980ce20-c5c1-4de3-b0b9-42c1cbd68709.jpg", featured: true },
 ];
 
 const categories = ["Todos", "Adornos navideños", "Personalizados", "Figuras navideñas", "Pesebres", "Colección mágica"];
